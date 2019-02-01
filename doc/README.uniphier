@@ -47,6 +47,7 @@ LD11 reference | uniphier_v8_defconfig | uniphier-ld11-ref
 LD11 Global    | uniphier_v8_defconfig | uniphier-ld11-global
 LD20 reference | uniphier_v8_defconfig | uniphier-ld20-ref (default)
 LD20 Global    | uniphier_v8_defconfig | uniphier-ld20-global
+Akebi96        | uniphier_v8_defconfig | uniphier-ld20-akebi96
 PXs3 reference | uniphier_v8_defconfig | uniphier-pxs3-ref
 
 For example, to compile the source for PXs2 Vodka board, run the following:
