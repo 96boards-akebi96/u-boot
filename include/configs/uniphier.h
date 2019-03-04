@@ -124,7 +124,7 @@
 	"third_image=u-boot.bin\0"
 #endif
 
-#define CONFIG_PREBOOT			"env exist ${bootdev}preboot && run ${bootdev}preboot"
+#define CONFIG_PREBOOT			"run fastbootscript"
 
 #define CONFIG_ROOTPATH			"/nfs/root/path"
 #define CONFIG_NFSBOOTCOMMAND						\
@@ -178,6 +178,8 @@
 	"nandboot=run bootcmd_ubifs0\0" \
 	"norboot=run tftpboot\0" \
 	"usbboot=run bootcmd_usb0\0" \
+	"fastbootscript=echo Checking FastBoot Mode && " \
+		"if gpio input 120; then echo NormalBoot; else echo FastBoot Mode; fastboot udp; fi \0" \
 	"emmcscript=setenv devtype mmc && " \
 		"mmcsetn && " \
 		"setenv devnum ${mmc_first_dev} && " \
