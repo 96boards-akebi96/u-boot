@@ -50,6 +50,8 @@ static int simple_video_probe(struct udevice *dev)
 		uc_priv->bpix = VIDEO_BPP16;
 	} else if (strcmp(format, "a8b8g8r8") == 0) {
 		uc_priv->bpix = VIDEO_BPP32;
+	} else if (strcmp(format, "a8r8g8b8") == 0) {
+		uc_priv->bpix = VIDEO_BPP32;
 	} else {
 		printf("%s: invalid format: %s\n", __func__, format);
 		return -EINVAL;
