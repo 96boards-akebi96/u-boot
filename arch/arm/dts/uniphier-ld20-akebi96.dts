@@ -68,6 +68,27 @@
 			};
 		};
 	};
+
+	framebuffer {
+		compatible = "simple-framebuffer";
+		reg = <0x0 0xc0000000 0x0 0x2000000>;
+		width = <0x780>;
+		height = <0x438>;
+		stride = <0x1e00>;
+		format = "a8r8g8b8";
+	};
+
+	reserved-memory {
+		#address-cells = <0x2>;
+		#size-cells = <0x2>;
+		ranges;
+
+		memory@c0000000 {
+			reg = <0x0 0xc0000000 0x0 0x2000000>;
+			no-map;
+		};
+	};
+
 };
 
 &serial0 {
