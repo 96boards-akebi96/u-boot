@@ -241,7 +241,7 @@ static int uniphier_spi_xfer(struct udevice *dev, unsigned int bitlen,
 	u8 *rx_buf = din, buf;
 	u32 len = bitlen / 8;
 	u32 tx_len, rx_len;
-	u32 ts, status;
+	u32 ts, status = 0;
 	int ret = 0;
 
 	if (bitlen % 8) {
@@ -389,7 +389,6 @@ static int uniphier_spi_set_mode(struct udevice *bus, uint mode)
 static int uniphier_spi_ofdata_to_platdata(struct udevice *bus)
 {
 	struct uniphier_spi_platdata *plat = bus->platdata;
-	struct uniphier_spi_priv *priv = dev_get_priv(bus);
 	const void *blob = gd->fdt_blob;
 	int node = dev_of_offset(bus);
 
