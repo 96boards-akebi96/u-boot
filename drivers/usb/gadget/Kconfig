@@ -60,6 +60,12 @@ config USB_GADGET_PRODUCT_NUM
 	help
 	  Product ID of the USB device emulated, reported to the host device.
 
+config USB_GADGET_MAX3420
+	bool "MAX3420 USB Over SPI"
+	depends on DM_SPI
+	help
+	  MAX3420, from MAXIM, implements USB-over-SPI Full-Speed device controller.
+
 config USB_GADGET_ATMEL_USBA
 	bool "Atmel USBA"
 	select USB_GADGET_DUALSPEED
