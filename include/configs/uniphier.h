@@ -179,7 +179,7 @@
 	"norboot=run tftpboot\0" \
 	"usbboot=run bootcmd_usb0\0" \
 	"fastbootscript=echo Checking FastBoot Mode && " \
-		"if gpio input 120; then echo NormalBoot; else echo FastBoot Mode; fastboot udp; fi \0" \
+		"if gpio input 120; then echo NormalBoot; else echo FastBoot Mode; fastboot usb 0; fi \0" \
 	"emmcscript=setenv devtype mmc && " \
 		"mmcsetn && " \
 		"setenv devnum ${mmc_first_dev} && " \
